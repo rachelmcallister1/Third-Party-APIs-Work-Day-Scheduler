@@ -61,6 +61,6 @@ $(function () {
   $(".container-lg").on("click",".saveBtn",function(){
     var userEntry = $(this).siblings("textarea").val()
     var timeBlk = $(this).parent().attr("id")
-    localStorage.setItem(timeBlk,userEntry)
+    localStorage.setItem(timeBlk,userEntry) //Key-value
   })
 });
