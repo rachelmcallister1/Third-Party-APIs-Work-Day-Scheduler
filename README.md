@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 05 Third-Party APIs: Work Day Scheduler
 
 ## Overview
@@ -9,8 +8,7 @@ You'll need to use the [Day.js](https://day.js.org/en/) library to work with dat
 
 ## Deployed Application
 
-## Acceptance Criteria
 
-The following animation demonstrates the application functionality:
+## Animation of working schedule
 <!-- @TODO: create ticket to review/update image) -->
 ![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
