@@ -26,11 +26,29 @@ $(function () {
   var time = dayjs().format('hh:mm:ss');
   $('#currentDay').text(time);
   var timeBlock = ""
+  var currentH =  dayjs().hour()
+  console.log(currentH)
   for(let i=9;i<=17;i++){
+    var hourString = ""
+    if( i < 12){
+      hourString = i + "AM"
+    }else if(i == 12){
+      hourString = i +"PM"
+    }else{
+      hourString = (i-12)+"PM"
+    }
+    var color =""
+    if(i < currentH){
+      color = "past"
+    }else if(i === currentH){
+      color = "present"
+    }else{
+      color ="future"
+    }
     var savedEntry = localStorage.getItem("hour-"+i) || ""
     timeBlock += `
-    <div id="hour-${i}" class="row time-block">
-    <div class="col-2 col-md-1 hour text-center py-3">${i}AM</div>
+    <div id="hour-${i}" class="row time-block ${color}">
+    <div class="col-2 col-md-1 hour text-center py-3">${hourString}</div>
     <textarea class="col-8 col-md-10 description" rows="3"> ${savedEntry}</textarea>
     <button class="btn saveBtn col-2 col-md-1" aria-label="save">
       <i class="fas fa-save" aria-hidden="true"></i>
