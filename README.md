@@ -9,5 +9,6 @@ https://rachelmcallister1.github.io/Third-Party-APIs-Work-Day-Scheduler/
 <!-- @TODO: create ticket to review/update image) -->
 ![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
 ## Image of working schedule
-![test content](./assets/scheduler.png)
+![Image of Schedule](Assets/scheduler.png)
+
 - Submitted by Rachel McAllister
