@@ -25,4 +25,24 @@ $(function () {
   console.log(today);
   var time = dayjs().format('hh:mm:ss');
   $('#currentDay').text(time);
+  var timeBlock = ""
+  for(let i=9;i<=17;i++){
+    var savedEntry = localStorage.getItem("hour-"+i) || ""
+    timeBlock += `
+    <div id="hour-${i}" class="row time-block">
+    <div class="col-2 col-md-1 hour text-center py-3">${i}AM</div>
+    <textarea class="col-8 col-md-10 description" rows="3"> ${savedEntry}</textarea>
+    <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+      <i class="fas fa-save" aria-hidden="true"></i>
+    </button>
+  </div>
+    `
+  }
+  $(".container-lg").html(timeBlock)
+//event bubbling
+  $(".container-lg").on("click",".saveBtn",function(){
+    var userEntry = $(this).siblings("textarea").val()
+    var timeBlk = $(this).parent().attr("id")
+    localStorage.setItem(timeBlk,userEntry)
+  })
 });
